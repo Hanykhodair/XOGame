@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/game_btn.dart';
 
 class XOGame extends StatelessWidget {
 
@@ -33,51 +34,29 @@ class XOGame extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Expanded(
-                  child: ElevatedButton(onPressed:() {
-
-                  }, child: Text('X'),),
-                ),
-                Expanded(
-                  child: ElevatedButton(onPressed:() {
-
-                  }, child: Text('X'),),
-                ),
-                Expanded(
-                  child: ElevatedButton(onPressed:() {
-
-                  }, child: Text('X'),),
-                ),
+                GameBtn('x'),
+                GameBtn('O'),
+                GameBtn('X'),
               ],
             ),
           ),
           Expanded(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
+                GameBtn('x'),
+                GameBtn('O'),
+                GameBtn('X'),
               ],
             ),
           ),
           Expanded(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
-                ElevatedButton(onPressed:() {
-
-                }, child: Text('X'),),
+                GameBtn('x'),
+                GameBtn('O'),
+                GameBtn('X'),
               ],
             ),
           ),        ],
