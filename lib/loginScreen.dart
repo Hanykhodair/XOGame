@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 hintText: 'Player 1',
                 fillColor: Colors.white70,
@@ -29,8 +30,10 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             TextField(
-              obscureText: true,
-              obscuringCharacter: '=',
+              keyboardType: TextInputType.text,
+              textInputAction: TextInputAction.next,
+              // obscureText: true,
+              // obscuringCharacter: '=',
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.deepPurple),
