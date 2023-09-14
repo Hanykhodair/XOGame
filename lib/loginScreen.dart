@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/xo.dart';
 
 class LoginScreen extends StatelessWidget {
 
+  static const String routeName = 'lgScreen';
+
+// String player1='';
+// String player2 = '';
+TextEditingController player1 = TextEditingController();
+TextEditingController player2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +19,10 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              // onChanged: (value) {
+              //   player1 = value;
+              // },
+              controller: player1,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 hintText: 'Player 1',
@@ -30,6 +41,10 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 20,),
             TextField(
+              controller: player2,
+              // onChanged: (value) {
+              //   player2 = value;
+              // },
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.next,
               // obscureText: true,
@@ -53,7 +68,7 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 40,),
             ElevatedButton(onPressed:() {
-
+                Navigator.pushNamed(context, XOGame.routeName);
             }, child: Text('Login'))
           ],
         ),

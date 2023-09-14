@@ -3,7 +3,7 @@ import 'package:untitled/game_btn.dart';
 
 class XOGame extends StatefulWidget {
 
-
+static const String routeName = 'mainScreen';
   @override
   State<XOGame> createState() => _XOGameState();
 }
@@ -21,7 +21,10 @@ class _XOGameState extends State<XOGame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('XO Game'),),
+      appBar: AppBar(title: Text('XO Game'),
+      actions: [
+        IconButton(onPressed:(){}, icon: Icon(Icons.abc))
+      ],),
       body: Column(
         children: [
           Expanded(
