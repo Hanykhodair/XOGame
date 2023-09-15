@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/player_model.dart';
 import 'package:untitled/xo.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -7,8 +8,8 @@ class LoginScreen extends StatelessWidget {
 
 // String player1='';
 // String player2 = '';
-TextEditingController player1 = TextEditingController();
-TextEditingController player2 = TextEditingController();
+TextEditingController player1Controller = TextEditingController();
+TextEditingController player2Controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ TextEditingController player2 = TextEditingController();
               // onChanged: (value) {
               //   player1 = value;
               // },
-              controller: player1,
+              controller: player1Controller,
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(
                 hintText: 'Player 1',
@@ -41,7 +42,7 @@ TextEditingController player2 = TextEditingController();
             ),
             SizedBox(height: 20,),
             TextField(
-              controller: player2,
+              controller: player2Controller,
               // onChanged: (value) {
               //   player2 = value;
               // },
@@ -68,7 +69,9 @@ TextEditingController player2 = TextEditingController();
             ),
             SizedBox(height: 40,),
             ElevatedButton(onPressed:() {
-                Navigator.pushNamed(context, XOGame.routeName);
+                Navigator.pushNamed(context, XOGame.routeName,
+                arguments: PlayerModel(
+                    player1Controller.text, player2Controller.text));
             }, child: Text('Login'))
           ],
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/game_btn.dart';
+import 'package:untitled/player_model.dart';
 
 class XOGame extends StatefulWidget {
 
@@ -20,6 +21,7 @@ class _XOGameState extends State<XOGame> {
 
   @override
   Widget build(BuildContext context) {
+var players = ModalRoute.of(context)?.settings.arguments as PlayerModel;
     return Scaffold(
       appBar: AppBar(title: Text('XO Game'),
       actions: [
@@ -34,7 +36,7 @@ class _XOGameState extends State<XOGame> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text('Player 1',
+                    Text(players.player1,
                     style: TextStyle(fontSize: 35),),
                     Text('$score1', style: TextStyle(
                         fontSize:35 ),),
@@ -43,7 +45,7 @@ class _XOGameState extends State<XOGame> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text('Player 2', style: TextStyle(
+                    Text(players.player2, style: TextStyle(
                       fontSize: 35
                     ),),
                     Text('$score2',
@@ -93,7 +95,7 @@ class _XOGameState extends State<XOGame> {
     if (board[index].isNotEmpty) return;
     if (counter.isOdd){
       board[index]='X';
-      score1++;
+      // score1++;
       bool win = checkWinner('X');
       if(win){
         score1+=10;
@@ -102,7 +104,7 @@ class _XOGameState extends State<XOGame> {
     }
     else{
       board[index]='O';
-      score2++;
+      // score2++;
       bool win = checkWinner('O');
       if (win){
         score2+=10;
